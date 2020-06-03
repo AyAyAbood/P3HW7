@@ -23,6 +23,8 @@ public class P3HW7 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        new Thread(new txtThread(new File("user1.txt")), "t1").start();
+        new Thread(new txtThread(new File("user2.txt")), "t2").start();
         /*
         MyThread t1 = new MyThread(100000, "user1.txt");
         t1.setName("t1");
@@ -35,6 +37,7 @@ public class P3HW7 {
         t1.start();
         t2.start();
          */
+        /*
         ExecutorService s = Executors.newFixedThreadPool(2);
         for (int i = 1; i <= 2; i++) {
             int count = i;
@@ -68,7 +71,8 @@ public class P3HW7 {
             });
         }
         s.shutdown();
-    }
+    */
+    }    
 
     public static void getData(String ff) {
         File f = new File(ff);
